@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase;de.prob.units.mchBase" org.eventb.texttools.text_lastmodified="1461764110382" org.eventb.texttools.text_representation="context VEM_context&#10;&#9;sets&#10;&#9;&#9;Elector&#10;&#9;&#9;HasVoted&#10;&#9;&#9;Code&#10;&#9;&#9;Manage&#10;&#9;constants&#10;&#9;&#9;Fofao&#10;&#9;&#9;Mickey&#10;&#9;&#9;Popeye&#10;&#9;&#9;Yes&#10;&#9;&#9;No&#10;&#9;&#9;add_elector&#10;&#9;  &#9;rem_elector&#10;&#9;&#9;add_candidate&#10;&#9;  &#9;rem_candidate&#10;&#9;axioms&#10;&#9;&#9;@partition_Elector partition(Elector, {Fofao}, {Mickey}, {Popeye})&#10;&#9;&#9;@partition_hasVoted partition(HasVoted, {Yes}, {No})&#10;&#9;&#9;@partition_Manage partition(Manage, {add_elector}, {add_candidate}, {rem_elector}, {rem_candidate})&#10;&#9;&#9;@partition_Code card(Code) = 3&#10;end" version="3">
+<org.eventb.core.carrierSet name="_B7mCoApIEeaMyLzwC0q9TQ" org.eventb.core.identifier="Elector"/>
+<org.eventb.core.constant name="_B7nQwApIEeaMyLzwC0q9TQ" org.eventb.core.identifier="Fofao"/>
+<org.eventb.core.constant name="_B7n30ApIEeaMyLzwC0q9TQ" org.eventb.core.identifier="Mickey"/>
+<org.eventb.core.constant name="_B7pF8ApIEeaMyLzwC0q9TQ" org.eventb.core.identifier="Popeye"/>
+<org.eventb.core.axiom name="_B7ptAApIEeaMyLzwC0q9TQ" org.eventb.core.label="partition_Elector" org.eventb.core.predicate="partition(Elector, {Fofao}, {Mickey}, {Popeye})"/>
+<org.eventb.core.carrierSet name="_A_DscApJEeaMyLzwC0q9TQ" org.eventb.core.identifier="HasVoted"/>
+<org.eventb.core.constant name="_A_ETgApJEeaMyLzwC0q9TQ" org.eventb.core.identifier="Yes"/>
+<org.eventb.core.constant name="_A_FhoApJEeaMyLzwC0q9TQ" org.eventb.core.identifier="No"/>
+<org.eventb.core.axiom name="_A_GIsApJEeaMyLzwC0q9TQ" org.eventb.core.label="partition_hasVoted" org.eventb.core.predicate="partition(HasVoted, {Yes}, {No})"/>
+<org.eventb.core.axiom name="_FqUoEApREeaMyLzwC0q9TQ" org.eventb.core.label="partition_Manage" org.eventb.core.predicate="partition(Manage, {add_elector}, {add_candidate}, {rem_elector}, {rem_candidate})"/>
+<org.eventb.core.carrierSet name="_xIlM4ApREeaMyLzwC0q9TQ" org.eventb.core.identifier="Code"/>
+<org.eventb.core.carrierSet name="_PZuhQAqAEeamY52N8g63kA" org.eventb.core.identifier="Manage"/>
+<org.eventb.core.constant name="_PZuhQQqAEeamY52N8g63kA" org.eventb.core.identifier="add_elector"/>
+<org.eventb.core.constant name="_PZuhQgqAEeamY52N8g63kA" org.eventb.core.identifier="rem_elector"/>
+<org.eventb.core.constant name="_PZuhQwqAEeamY52N8g63kA" org.eventb.core.identifier="add_candidate"/>
+<org.eventb.core.constant name="_PZuhRAqAEeamY52N8g63kA" org.eventb.core.identifier="rem_candidate"/>
+<org.eventb.core.axiom name="_PZuhRQqAEeamY52N8g63kA" org.eventb.core.label="partition_Code" org.eventb.core.predicate="card(Code) = 3"/>
+</org.eventb.core.contextFile>

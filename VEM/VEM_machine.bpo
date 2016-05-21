@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="105">
+<org.eventb.core.poIdentifier name="Code" org.eventb.core.type="ℙ(Code)"/>
+<org.eventb.core.poIdentifier name="Elector" org.eventb.core.type="ℙ(Elector)"/>
+<org.eventb.core.poIdentifier name="HasVoted" org.eventb.core.type="ℙ(HasVoted)"/>
+<org.eventb.core.poIdentifier name="Manage" org.eventb.core.type="ℙ(Manage)"/>
+<org.eventb.core.poIdentifier name="Fofao" org.eventb.core.type="Elector"/>
+<org.eventb.core.poIdentifier name="Mickey" org.eventb.core.type="Elector"/>
+<org.eventb.core.poIdentifier name="No" org.eventb.core.type="HasVoted"/>
+<org.eventb.core.poIdentifier name="Popeye" org.eventb.core.type="Elector"/>
+<org.eventb.core.poIdentifier name="Yes" org.eventb.core.type="HasVoted"/>
+<org.eventb.core.poIdentifier name="add_candidate" org.eventb.core.type="Manage"/>
+<org.eventb.core.poIdentifier name="add_elector" org.eventb.core.type="Manage"/>
+<org.eventb.core.poIdentifier name="rem_candidate" org.eventb.core.type="Manage"/>
+<org.eventb.core.poIdentifier name="rem_elector" org.eventb.core.type="Manage"/>
+<org.eventb.core.poPredicate name="rem_candidatf" org.eventb.core.predicate="partition(Elector,{Fofao},{Mickey},{Popeye})" org.eventb.core.source="/VEM/VEM_context.buc|org.eventb.core.contextFile#VEM_context|org.eventb.core.axiom#_B7ptAApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="rem_candidatg" org.eventb.core.predicate="partition(HasVoted,{Yes},{No})" org.eventb.core.source="/VEM/VEM_context.buc|org.eventb.core.contextFile#VEM_context|org.eventb.core.axiom#_A_GIsApJEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="rem_candidath" org.eventb.core.predicate="partition(Manage,{add_elector},{add_candidate},{rem_elector},{rem_candidate})" org.eventb.core.source="/VEM/VEM_context.buc|org.eventb.core.contextFile#VEM_context|org.eventb.core.axiom#_FqUoEApREeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="rem_candidati" org.eventb.core.predicate="card(Code)=3" org.eventb.core.source="/VEM/VEM_context.buc|org.eventb.core.contextFile#VEM_context|org.eventb.core.axiom#_PZuhRQqAEeamY52N8g63kA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="105">
+<org.eventb.core.poIdentifier name="beginRegister" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="beginVoting" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="candidates" org.eventb.core.type="ℙ(Elector×ℤ)"/>
+<org.eventb.core.poIdentifier name="electors" org.eventb.core.type="ℙ(Elector×HasVoted)"/>
+<org.eventb.core.poIdentifier name="manageElectors" org.eventb.core.type="ℙ(Manage×BOOL)"/>
+<org.eventb.core.poIdentifier name="winners" org.eventb.core.type="ℙ(Elector×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/type_manageElectors/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="105">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectort"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{add_elector ↦ FALSE,rem_elector ↦ FALSE,add_candidate ↦ FALSE,rem_candidate ↦ FALSE}∈Manage → BOOL" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_o3qOoApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_o3qOoApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#INITIALISATION\/type_manageElectors\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/type_electors/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="105">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectort"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(Elector×HasVoted))∈Elector ⇸ HasVoted" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_MucPQApKEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_MucPQApKEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#INITIALISATION\/type_electors\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/type_candidates/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="105">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectort"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(Elector×ℤ))∈Elector ⇸ ℕ" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_nqPoMApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_nqPoMApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#INITIALISATION\/type_candidates\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/type_winners/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="105">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectort"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(Elector×ℤ))∈ℙ(∅ ⦂ ℙ(Elector×ℤ))" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_eHUpAAp-EeamY52N8g63kA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_eHUpAAp-EeamY52N8g63kA"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#INITIALISATION\/type_winners\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTmanageElectort" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="105">
+<org.eventb.core.poIdentifier name="beginRegister'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="manageElectors'" org.eventb.core.type="ℙ(Manage×BOOL)"/>
+<org.eventb.core.poIdentifier name="winners'" org.eventb.core.type="ℙ(Elector×ℤ)"/>
+<org.eventb.core.poIdentifier name="electors'" org.eventb.core.type="ℙ(Elector×HasVoted)"/>
+<org.eventb.core.poIdentifier name="beginVoting'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="candidates'" org.eventb.core.type="ℙ(Elector×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPmanageElectort" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTIDENTmanageElectort" org.eventb.core.poStamp="105"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTmanageElectoru" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="105">
+<org.eventb.core.poIdentifier name="beginRegister'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="beginVoting'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPmanageElectoru" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTIDENTmanageElectoru" org.eventb.core.poStamp="105">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="beginVoting=FALSE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_oVYEIApMEeaMyLzwC0q9TQ|org.eventb.core.guard#_RHImcApNEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="beginRegister=TRUE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_oVYEIApMEeaMyLzwC0q9TQ|org.eventb.core.guard#_YnxQ4ApOEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="candidates≠(∅ ⦂ ℙ(Elector×ℤ))" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_oVYEIApMEeaMyLzwC0q9TQ|org.eventb.core.guard#_Yn2JYApOEeaMyLzwC0q9TQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="manageElectorsAndCandidates/type_manageElectors/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectorv"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="manageElectors{manage ↦ newState}∈Manage → BOOL" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_o3qOoApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_RHGKMApNEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_o3qOoApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#manageElectorsAndCandidates\/type_manageElectors\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTmanageElectorv" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="105">
+<org.eventb.core.poIdentifier name="newState" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="manage" org.eventb.core.type="Manage"/>
+<org.eventb.core.poIdentifier name="manageElectors'" org.eventb.core.type="ℙ(Manage×BOOL)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPmanageElectorv" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTIDENTmanageElectorv" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="beginVoting=FALSE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_RHGKMApNEeaMyLzwC0q9TQ|org.eventb.core.guard#_2dzsgApOEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="beginRegister=TRUE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_RHGKMApNEeaMyLzwC0q9TQ|org.eventb.core.guard#_FHTIoApTEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="manage∈Manage" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_RHGKMApNEeaMyLzwC0q9TQ|org.eventb.core.guard#_sBn8UApgEea4A8oTnyPTYg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="newState∈BOOL" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_RHGKMApNEeaMyLzwC0q9TQ|org.eventb.core.guard#_FHNCAApTEeaMyLzwC0q9TQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="registerElector/type_manageElectors/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectorw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="manageElectors{add_elector ↦ FALSE}∈Manage → BOOL" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_o3qOoApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_YnztIApOEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_o3qOoApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#registerElector\/type_manageElectors\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="registerElector/type_electors/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectorw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="electors∪{elector ↦ No}∈Elector ⇸ HasVoted" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_MucPQApKEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_YnztIApOEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_MucPQApKEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#registerElector\/type_electors\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTmanageElectorw" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="107">
+<org.eventb.core.poIdentifier name="manageElectors'" org.eventb.core.type="ℙ(Manage×BOOL)"/>
+<org.eventb.core.poIdentifier name="elector" org.eventb.core.type="Elector"/>
+<org.eventb.core.poIdentifier name="electors'" org.eventb.core.type="ℙ(Elector×HasVoted)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPmanageElectorw" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTIDENTmanageElectorw" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="elector∉dom(electors)" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_YnztIApOEeaMyLzwC0q9TQ|org.eventb.core.guard#_FHOQIApTEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="beginVoting=FALSE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_YnztIApOEeaMyLzwC0q9TQ|org.eventb.core.guard#_nppyUApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="beginRegister=TRUE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_YnztIApOEeaMyLzwC0q9TQ|org.eventb.core.guard#_v3d7kApXEeaMyLzwC0q9TQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="removeElector/type_manageElectors/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectorx"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="manageElectors{rem_elector ↦ FALSE}∈Manage → BOOL" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_o3qOoApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_FHLM0ApTEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_o3qOoApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#removeElector\/type_manageElectors\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="removeElector/type_electors/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectorx"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="electors ∖ {elector ↦ No}∈Elector ⇸ HasVoted" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_MucPQApKEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_FHLM0ApTEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_MucPQApKEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#removeElector\/type_electors\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTmanageElectorx" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="107">
+<org.eventb.core.poIdentifier name="manageElectors'" org.eventb.core.type="ℙ(Manage×BOOL)"/>
+<org.eventb.core.poIdentifier name="elector" org.eventb.core.type="Elector"/>
+<org.eventb.core.poIdentifier name="electors'" org.eventb.core.type="ℙ(Elector×HasVoted)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPmanageElectorx" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTIDENTmanageElectorx" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="elector∈dom(electors)" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_FHLM0ApTEeaMyLzwC0q9TQ|org.eventb.core.guard#_PdDlEApfEea4A8oTnyPTYg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="elector∉dom(candidates)" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_FHLM0ApTEeaMyLzwC0q9TQ|org.eventb.core.guard#_FHR6gApTEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="beginVoting=FALSE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_FHLM0ApTEeaMyLzwC0q9TQ|org.eventb.core.guard#_np1YgApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="beginRegister=TRUE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_FHLM0ApTEeaMyLzwC0q9TQ|org.eventb.core.guard#_azyP8ApjEea4A8oTnyPTYg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="registerCandidate/type_manageElectors/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectory"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="manageElectors{add_candidate ↦ FALSE}∈Manage → BOOL" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_o3qOoApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_v3cGYApXEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_o3qOoApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#registerCandidate\/type_manageElectors\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="registerCandidate/type_candidates/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectory"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="candidates∪{candidate ↦ 0}∈Elector ⇸ ℕ" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_nqPoMApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_v3cGYApXEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_nqPoMApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#registerCandidate\/type_candidates\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="registerCandidate/type_winners/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectory"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="winners∈ℙ(candidates∪{candidate ↦ 0})" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_eHUpAAp-EeamY52N8g63kA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_v3cGYApXEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_eHUpAAp-EeamY52N8g63kA"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#registerCandidate\/type_winners\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTmanageElectory" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="106">
+<org.eventb.core.poIdentifier name="manageElectors'" org.eventb.core.type="ℙ(Manage×BOOL)"/>
+<org.eventb.core.poIdentifier name="candidate" org.eventb.core.type="Elector"/>
+<org.eventb.core.poIdentifier name="candidates'" org.eventb.core.type="ℙ(Elector×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPmanageElectory" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTIDENTmanageElectory" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="candidate∈dom(electors)" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_v3cGYApXEeaMyLzwC0q9TQ|org.eventb.core.guard#_sBjq4ApgEea4A8oTnyPTYg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="candidate∉dom(candidates)" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_v3cGYApXEeaMyLzwC0q9TQ|org.eventb.core.guard#_sBmHIApgEea4A8oTnyPTYg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="beginVoting=FALSE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_v3cGYApXEeaMyLzwC0q9TQ|org.eventb.core.guard#_nqHFUApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="beginRegister=TRUE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_v3cGYApXEeaMyLzwC0q9TQ|org.eventb.core.guard#_2TRD4ApjEea4A8oTnyPTYg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="removeCandidate/type_manageElectors/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectorz"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="manageElectors{rem_candidate ↦ FALSE}∈Manage → BOOL" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_o3qOoApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_sBfZcApgEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_o3qOoApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#removeCandidate\/type_manageElectors\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="removeCandidate/type_candidates/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectorz"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{candidate} ⩤ candidates∈Elector ⇸ ℕ" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_nqPoMApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_sBfZcApgEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_nqPoMApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#removeCandidate\/type_candidates\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="removeCandidate/type_winners/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElectorz"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="winners∈ℙ({candidate} ⩤ candidates)" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_eHUpAAp-EeamY52N8g63kA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_sBfZcApgEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_eHUpAAp-EeamY52N8g63kA"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#removeCandidate\/type_winners\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTmanageElectorz" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="107">
+<org.eventb.core.poIdentifier name="manageElectors'" org.eventb.core.type="ℙ(Manage×BOOL)"/>
+<org.eventb.core.poIdentifier name="candidate" org.eventb.core.type="Elector"/>
+<org.eventb.core.poIdentifier name="candidates'" org.eventb.core.type="ℙ(Elector×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPmanageElectorz" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTIDENTmanageElectorz" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="candidate∈dom(candidates)" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_sBfZcApgEea4A8oTnyPTYg|org.eventb.core.guard#_JxPfgApkEea4A8oTnyPTYg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="beginVoting=FALSE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_sBfZcApgEea4A8oTnyPTYg|org.eventb.core.guard#_nqUgsApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="beginRegister=TRUE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_sBfZcApgEea4A8oTnyPTYg|org.eventb.core.guard#_np30wApnEea4A8oTnyPTYg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="vote/guard_elector/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTHYPmanageElector{("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="elector∈dom(electors)⇒electors∈Elector ⇸ HasVoted" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_azvMoApjEea4A8oTnyPTYg|org.eventb.core.guard#_nqWV4ApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_azvMoApjEea4A8oTnyPTYg|org.eventb.core.guard#_nqWV4ApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTHYPmanageElector{("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="vote/type_electors/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElector{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="electors{elector ↦ Yes}∈Elector ⇸ HasVoted" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_MucPQApKEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_azvMoApjEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_MucPQApKEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#vote\/type_electors\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="vote/type_candidates/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElector{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="candidates{candidate ↦ candidates(candidate)+1}∈Elector ⇸ ℕ" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_nqPoMApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_azvMoApjEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_nqPoMApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#vote\/type_candidates\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="vote/type_winners/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElector{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="winners∈ℙ(candidates{candidate ↦ candidates(candidate)+1})" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_eHUpAAp-EeamY52N8g63kA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_azvMoApjEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_eHUpAAp-EeamY52N8g63kA"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#vote\/type_winners\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="vote/voteInCandidate/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElector{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="candidate∈dom(candidates)∧candidates∈Elector ⇸ ℤ" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_azvMoApjEea4A8oTnyPTYg|org.eventb.core.action#_v_T1sApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_azvMoApjEea4A8oTnyPTYg|org.eventb.core.action#_v_T1sApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElector{"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTmanageElector{" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="105">
+<org.eventb.core.poIdentifier name="elector" org.eventb.core.type="Elector"/>
+<org.eventb.core.poIdentifier name="candidate" org.eventb.core.type="Elector"/>
+<org.eventb.core.poIdentifier name="electors'" org.eventb.core.type="ℙ(Elector×HasVoted)"/>
+<org.eventb.core.poIdentifier name="candidates'" org.eventb.core.type="ℙ(Elector×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPmanageElector{(" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTIDENTmanageElector{" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="beginVoting=TRUE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_azvMoApjEea4A8oTnyPTYg|org.eventb.core.guard#_np5p8ApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="beginRegister=FALSE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_azvMoApjEea4A8oTnyPTYg|org.eventb.core.guard#_np7fIApnEea4A8oTnyPTYg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPmanageElector{" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTHYPmanageElector{(" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="elector∈dom(electors)∧electors(elector)=No" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_azvMoApjEea4A8oTnyPTYg|org.eventb.core.guard#_nqWV4ApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="candidate∈dom(candidates)" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_azvMoApjEea4A8oTnyPTYg|org.eventb.core.guard#_nqI6gApnEea4A8oTnyPTYg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="endVoting/type_winners/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElector\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="candidates ▷ {max(ran(candidates))}∈ℙ(candidates)" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_eHUpAAp-EeamY52N8g63kA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_nqSEcApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_eHUpAAp-EeamY52N8g63kA"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#endVoting\/type_winners\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="endVoting/winnerss/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElector\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ran(candidates)≠(∅ ⦂ ℙ(ℤ))∧(∃b⦂ℤ·∀x⦂ℤ·x∈ran(candidates)⇒b≥x)" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_nqSEcApnEea4A8oTnyPTYg|org.eventb.core.action#_v_RZcApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_nqSEcApnEea4A8oTnyPTYg|org.eventb.core.action#_v_RZcApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElector\|"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTmanageElector|" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="105">
+<org.eventb.core.poIdentifier name="winners'" org.eventb.core.type="ℙ(Elector×ℤ)"/>
+<org.eventb.core.poIdentifier name="beginVoting'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPmanageElector|" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTIDENTmanageElector\|" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="beginVoting=TRUE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_nqSEcApnEea4A8oTnyPTYg|org.eventb.core.guard#_0ulUUAp_EeamY52N8g63kA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="beginRegister=FALSE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_nqSEcApnEea4A8oTnyPTYg|org.eventb.core.guard#_VHlRYQp_EeamY52N8g63kA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="resetSystem/type_electors/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElector}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(Elector×HasVoted))∈Elector ⇸ HasVoted" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_MucPQApKEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_VHlRYAp_EeamY52N8g63kA"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_MucPQApKEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#resetSystem\/type_electors\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="resetSystem/type_candidates/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElector}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(Elector×ℤ))∈Elector ⇸ ℕ" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_nqPoMApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_VHlRYAp_EeamY52N8g63kA"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_nqPoMApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#resetSystem\/type_candidates\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="resetSystem/type_winners/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTALLHYPmanageElector}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(Elector×ℤ))∈ℙ(∅ ⦂ ℙ(Elector×ℤ))" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_eHUpAAp-EeamY52N8g63kA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_VHlRYAp_EeamY52N8g63kA"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_eHUpAAp-EeamY52N8g63kA"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poSequent#resetSystem\/type_winners\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTmanageElector}" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="105">
+<org.eventb.core.poIdentifier name="beginRegister'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="winners'" org.eventb.core.type="ℙ(Elector×ℤ)"/>
+<org.eventb.core.poIdentifier name="electors'" org.eventb.core.type="ℙ(Elector×HasVoted)"/>
+<org.eventb.core.poIdentifier name="beginVoting'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="candidates'" org.eventb.core.type="ℙ(Elector×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPmanageElector}" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#EVTIDENTmanageElector}" org.eventb.core.poStamp="108">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="beginVoting=FALSE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_VHlRYAp_EeamY52N8g63kA|org.eventb.core.guard#_2oUNMAzcEeah2aWuHe1LQA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="beginRegister=FALSE" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.event#_VHlRYAp_EeamY52N8g63kA|org.eventb.core.guard#_2oWpcAzcEeah2aWuHe1LQA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/VEM/VEM_machine.bpo|org.eventb.core.poFile#VEM_machine|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="105">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="manageElectors∈Manage → BOOL" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_o3qOoApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="electors∈Elector ⇸ HasVoted" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_MucPQApKEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="beginVoting∈BOOL" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_g1F60ApSEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="beginRegister∈BOOL" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_ebtDwAphEea4A8oTnyPTYg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="candidates∈Elector ⇸ ℕ" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_nqPoMApnEea4A8oTnyPTYg"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="winners∈ℙ(candidates)" org.eventb.core.source="/VEM/VEM_machine.bum|org.eventb.core.machineFile#VEM_machine|org.eventb.core.invariant#_eHUpAAp-EeamY52N8g63kA"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

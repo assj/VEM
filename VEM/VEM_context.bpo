@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="17">
+<org.eventb.core.poIdentifier name="Code" org.eventb.core.type="ℙ(Code)"/>
+<org.eventb.core.poIdentifier name="Elector" org.eventb.core.type="ℙ(Elector)"/>
+<org.eventb.core.poIdentifier name="HasVoted" org.eventb.core.type="ℙ(HasVoted)"/>
+<org.eventb.core.poIdentifier name="Manage" org.eventb.core.type="ℙ(Manage)"/>
+<org.eventb.core.poIdentifier name="Fofao" org.eventb.core.type="Elector"/>
+<org.eventb.core.poIdentifier name="Mickey" org.eventb.core.type="Elector"/>
+<org.eventb.core.poIdentifier name="No" org.eventb.core.type="HasVoted"/>
+<org.eventb.core.poIdentifier name="Popeye" org.eventb.core.type="Elector"/>
+<org.eventb.core.poIdentifier name="Yes" org.eventb.core.type="HasVoted"/>
+<org.eventb.core.poIdentifier name="add_candidate" org.eventb.core.type="Manage"/>
+<org.eventb.core.poIdentifier name="add_elector" org.eventb.core.type="Manage"/>
+<org.eventb.core.poIdentifier name="rem_candidate" org.eventb.core.type="Manage"/>
+<org.eventb.core.poIdentifier name="rem_elector" org.eventb.core.type="Manage"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="partition_Code/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/VEM/VEM_context.bpo|org.eventb.core.poFile#VEM_context|org.eventb.core.poPredicateSet#HYP)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(Code)" org.eventb.core.source="/VEM/VEM_context.buc|org.eventb.core.contextFile#VEM_context|org.eventb.core.axiom#_PZuhRQqAEeamY52N8g63kA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/VEM/VEM_context.buc|org.eventb.core.contextFile#VEM_context|org.eventb.core.axiom#_PZuhRQqAEeamY52N8g63kA"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/VEM/VEM_context.bpo|org.eventb.core.poFile#VEM_context|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/VEM/VEM_context.bpo|org.eventb.core.poFile#VEM_context|org.eventb.core.poPredicateSet#HYP)"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="HYP)" org.eventb.core.parentSet="/VEM/VEM_context.bpo|org.eventb.core.poFile#VEM_context|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(Elector,{Fofao},{Mickey},{Popeye})" org.eventb.core.source="/VEM/VEM_context.buc|org.eventb.core.contextFile#VEM_context|org.eventb.core.axiom#_B7ptAApIEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(HasVoted,{Yes},{No})" org.eventb.core.source="/VEM/VEM_context.buc|org.eventb.core.contextFile#VEM_context|org.eventb.core.axiom#_A_GIsApJEeaMyLzwC0q9TQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(Manage,{add_elector},{add_candidate},{rem_elector},{rem_candidate})" org.eventb.core.source="/VEM/VEM_context.buc|org.eventb.core.contextFile#VEM_context|org.eventb.core.axiom#_FqUoEApREeaMyLzwC0q9TQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/VEM/VEM_context.bpo|org.eventb.core.poFile#VEM_context|org.eventb.core.poPredicateSet#HYP)" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="card(Code)=3" org.eventb.core.source="/VEM/VEM_context.buc|org.eventb.core.contextFile#VEM_context|org.eventb.core.axiom#_PZuhRQqAEeamY52N8g63kA"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

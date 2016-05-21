@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="INITIALISATION/type_manageElectors/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="105" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/type_electors/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="105" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/type_candidates/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="105" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/type_winners/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="105" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="manageElectorsAndCandidates/type_manageElectors/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="registerElector/type_manageElectors/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="registerElector/type_electors/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeElector/type_manageElectors/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeElector/type_electors/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="registerCandidate/type_manageElectors/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="registerCandidate/type_candidates/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="registerCandidate/type_winners/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeCandidate/type_manageElectors/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeCandidate/type_candidates/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeCandidate/type_winners/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="vote/guard_elector/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="vote/type_electors/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="vote/type_candidates/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="vote/type_winners/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="vote/voteInCandidate/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="endVoting/type_winners/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="endVoting/winnerss/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="resetSystem/type_electors/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="resetSystem/type_candidates/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="resetSystem/type_winners/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="108" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>
