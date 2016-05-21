@@ -1,2 +1,1 @@
-# VEM
-VEM (Voting Electronic Machine)
+# VEM (Voting Electronic Machine)
